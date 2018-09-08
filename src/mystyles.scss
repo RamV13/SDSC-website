@@ -28,6 +28,13 @@ $input-shadow: none;
 @import "../node_modules/bulma/sass/layout/section.sass";
 @import "../node_modules/bulma/sass/components/navbar.sass";
 
+@media screen and (min-width: 1088px) {
+  .container {
+    max-width: 1020px;
+    width: 1020px;
+  }
+}
+
 .navbar {
     box-shadow: 0 2px 5px #EEEEEE;
 }
