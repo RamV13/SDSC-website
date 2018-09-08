@@ -4,7 +4,7 @@ Repository containing the website infrastructure for Sarva Dharma Service Center
 
 ## Contents
 
-- `dist/` contains the actual website resources bundled by Webpack
+- `dist/` contains the actual website resources that should be deployed
 - `src/` contains the source JS/CSS
 - `webpack.config.js` contains the configuration for the Webpack bundling process
 
