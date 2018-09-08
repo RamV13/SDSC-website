@@ -2,27 +2,28 @@
 
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+$family-sans-serif: "Roboto", sans-serif;
 
 // Set your brand colors
 $orange: #FF9800;
-
-// Update Bulma's global variables
-$family-sans-serif: "Roboto", sans-serif;
 $primary: $orange;
+
 $widescreen-enabled: false;
 $fullhd-enabled: false;
-
-// Update some of Bulma's component variables
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+$box-shadow: 0 0 20px 5px #EEEEEE;
+
 // Import only what you need from Bulma
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/box.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/container.sass";
 @import "../node_modules/bulma/sass/elements/form.sass";
+@import "../node_modules/bulma/sass/elements/table.sass";
 @import "../node_modules/bulma/sass/elements/title.sass";
 @import "../node_modules/bulma/sass/layout/hero.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
