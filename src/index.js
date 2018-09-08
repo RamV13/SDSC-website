@@ -9,8 +9,8 @@ $('.burger').click(function() {
 });
 
 $('.navbar-item').click(function() {
-  $('.burger').toggleClass('is-active');
-  $('.navbar-menu').toggleClass('is-active');
+  $('.burger').removeClass('is-active');
+  $('.navbar-menu').removeClass('is-active');
 });
 
 // Page Navigation Management
