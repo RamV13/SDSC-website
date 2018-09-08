@@ -3730,6 +3730,9 @@ a.navbar-item,
   .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #fafafa; } }
 
+.navbar {
+  box-shadow: 0 2px 5px #EEEEEE; }
+
 .navbar-item {
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }

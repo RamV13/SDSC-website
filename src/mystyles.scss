@@ -28,6 +28,10 @@ $input-shadow: none;
 @import "../node_modules/bulma/sass/layout/section.sass";
 @import "../node_modules/bulma/sass/components/navbar.sass";
 
+.navbar {
+    box-shadow: 0 2px 5px #EEEEEE;
+}
+
 .navbar-item {
     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
