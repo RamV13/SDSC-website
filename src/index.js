@@ -10,6 +10,8 @@ $('.burger').click(function() {
 
 // Page Navigation Management
 
+// TODO(ramvellanki): implement URL history to support browser navigation
+
 const homeID = 'home';
 const contentID = 'content';
 // mapping between navbar items and page HTML
