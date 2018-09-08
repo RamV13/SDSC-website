@@ -12,6 +12,7 @@ $('.burger').click(function() {
 
 const homeID = 'home';
 const contentID = 'content';
+var pageFilled = false;
 // mapping between navbar items and page HTML
 var navMap = {
   'home': '',
@@ -23,11 +24,25 @@ var navMap = {
 
 // initialize page HTML once the page is rendered
 $(function() {
-  updatePage(window.location.hash.substring(1, window.location.hash.length - 5));
+  var navButtonID = curNavButton();
+  if (!navButtonID) navButtonID = homeID;
+  updatePage(navButtonID);
+  window.history.replaceState({
+    navButtonID: navButtonID
+  }, '', '#' + $('#' + navButtonID).attr('href'));
 });
 
-function updatePage(navButtonID) {
-  navButtonID = navButtonID in navMap ? navButtonID : homeID;
+function curNavButton() {
+  return window.location.hash.substring(1, window.location.hash.length - 5);
+}
+
+function updatePage(navButtonID, force) {
+  if (!(navButtonID in navMap) ||
+    (!force && navButtonID == curNavButton() && pageFilled)) {
+    return;
+  }
+  pageFilled = true;
+
   $('#' + contentID).fadeOut(function() {
     if (navMap[navButtonID]) {
       $('#' + contentID).html(navMap[navButtonID]).fadeIn();
@@ -50,16 +65,16 @@ Object.keys(navMap).forEach(function(navButtonID) {
 
   // register click callbacks that render corresponding page HTML
   $('#' + navButtonID).click(function() {
+    updatePage(navButtonID);
     window.history.pushState({
       navButtonID: navButtonID
     }, '', '#' + $(this).attr('href'));
-    updatePage(navButtonID);
     return false;
   });
 });
 
 window.onpopstate = function(e) {
-  updatePage(e.state ? e.state.navButtonID : homeID);
+  updatePage(e.state.navButtonID, true);
 };
 
 // Quote Bank Management
