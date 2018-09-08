@@ -41,12 +41,8 @@ function curNavButton() {
   return window.location.hash.substring(1, window.location.hash.length - 5);
 }
 
-function updatePage(navButtonID, force) {
-  if (!(navButtonID in navMap) ||
-    (!force && navButtonID == curNavButton() && pageFilled)) {
-    return;
-  }
-  pageFilled = true;
+function updatePage(navButtonID) {
+  if (!(navButtonID in navMap)) return;
 
   $('#' + contentID).fadeOut(function() {
     if (navMap[navButtonID]) {
@@ -70,16 +66,18 @@ Object.keys(navMap).forEach(function(navButtonID) {
 
   // register click callbacks that render corresponding page HTML
   $('#' + navButtonID).click(function() {
-    updatePage(navButtonID);
-    window.history.pushState({
-      navButtonID: navButtonID
-    }, '', '#' + $(this).attr('href'));
+    if (navButtonID != curNavButton()) {
+      updatePage(navButtonID);
+      window.history.pushState({
+        navButtonID: navButtonID
+      }, '', '#' + $(this).attr('href'));
+    }
     return false;
   });
 });
 
 window.onpopstate = function(e) {
-  updatePage(e.state.navButtonID, true);
+  updatePage(e.state.navButtonID);
 };
 
 // Quote Bank Management
