@@ -51,3 +51,31 @@ Object.keys(navMap).forEach(function(navButtonID) {
     return false;
   });
 });
+
+// Quote Bank Management
+
+const quoteID = 'quote';
+const QUOTE_TIME = 15; // (s)
+const QUOTES = [
+  'Love All, Serve All',
+  'Help Ever, Hurt Never',
+  'Hands that serve are holier than lips that pray',
+  'There is only one religion, the religion of love',
+  'Service to man is service to God'
+];
+var quotes = QUOTES.slice(1,5);
+
+function shuffleQuote() {
+  if (quotes.length == 0) quotes = QUOTES.slice();
+  var quoteIndex = Math.floor(Math.random()*quotes.length);
+  while (('"' + quotes[quoteIndex] + '"') == $('#' + quoteID).html()) {
+    quoteIndex = Math.floor(Math.random()*quotes.length);
+  }
+  var quote = quotes[quoteIndex];
+  quotes.splice(quoteIndex, 1);
+  $('#' + quoteID).fadeOut('slow', function() {
+    $('#' + quoteID).html('"' + quote + '"').fadeIn('slow');
+  });
+  setTimeout(shuffleQuote, QUOTE_TIME * 1000);
+}
+setTimeout(shuffleQuote, QUOTE_TIME * 1000);
