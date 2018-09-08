@@ -3736,3 +3736,9 @@ a.navbar-item,
 .navbar-item {
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
+
+.footer {
+  margin-top: 10px; }
+
+.footer-para {
+  padding: 6px 0; }
