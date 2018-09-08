@@ -8,6 +8,11 @@ $('.burger').click(function() {
   $('#'+this.dataset.target).toggleClass('is-active');
 });
 
+$('.navbar-item').click(function() {
+  $('.burger').toggleClass('is-active');
+  $('.navbar-menu').toggleClass('is-active');
+});
+
 // Page Navigation Management
 
 const homeID = 'home';
