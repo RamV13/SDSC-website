@@ -14,7 +14,7 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-$box-shadow: 0 0 20px 5px #EEEEEE;
+$box-shadow: 0 0 20px 5px #CCCCCC;
 
 // Import only what you need from Bulma
 @import "../node_modules/bulma/sass/utilities/_all.sass";
@@ -25,6 +25,7 @@ $box-shadow: 0 0 20px 5px #EEEEEE;
 @import "../node_modules/bulma/sass/elements/form.sass";
 @import "../node_modules/bulma/sass/elements/table.sass";
 @import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/grid/tiles.sass";
 @import "../node_modules/bulma/sass/layout/hero.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
 @import "../node_modules/bulma/sass/components/navbar.sass";
@@ -43,6 +44,25 @@ $box-shadow: 0 0 20px 5px #EEEEEE;
 .navbar-item {
     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+// Home
+.education {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/education.jpg") no-repeat center / cover;
+}
+.health {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/health.jpg") no-repeat center / cover;
+}
+.community {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/community.jpg") no-repeat center / cover;
+}
+.multifaith {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover /* , url("img/education.jpg") no-repeat center / cover */;
+}
+
+// About
+.box.about {
+    box-shadow: 0 0 20px 5px #EEEEEE;
 }
 
 .footer {
