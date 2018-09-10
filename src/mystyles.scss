@@ -22,12 +22,17 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
 @import "../node_modules/bulma/sass/elements/box.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/content.sass";
 @import "../node_modules/bulma/sass/elements/form.sass";
+@import "../node_modules/bulma/sass/elements/image.sass";
 @import "../node_modules/bulma/sass/elements/table.sass";
 @import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/grid/columns.sass";
 @import "../node_modules/bulma/sass/grid/tiles.sass";
 @import "../node_modules/bulma/sass/layout/hero.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/components/card.sass";
+@import "../node_modules/bulma/sass/components/media.sass";
 @import "../node_modules/bulma/sass/components/navbar.sass";
 
 @media screen and (min-width: 1088px) {
@@ -69,6 +74,14 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
 .contact.logo {
     background: url("img/logo.svg");
 }
+.card {
+    box-shadow: 0 0 20px 5px #EEEEEE;
+    height: 100%;
+}
+.contact.media {
+    margin-bottom: 0 !important;
+}
+
 
 .footer {
     margin-top: 10px;
