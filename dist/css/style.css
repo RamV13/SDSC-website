@@ -3954,6 +3954,9 @@ a.navbar-item,
 .box.about {
   box-shadow: 0 0 20px 5px #EEEEEE; }
 
+.contact.logo {
+  background: url(../img/logo.svg); }
+
 .footer {
   margin-top: 10px; }
 
