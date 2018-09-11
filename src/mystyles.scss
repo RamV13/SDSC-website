@@ -51,6 +51,10 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+.section {
+    padding: 1rem 1.5rem 3rem 1.5rem;
+}
+
 // Home
 .education {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/education.jpg") no-repeat center / cover;
@@ -80,8 +84,11 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
 }
 .contact.media {
     margin-bottom: 0 !important;
+    justify-content: center;
 }
-
+hr.contact {
+    margin: 0.75rem 0;
+}
 
 .footer {
     margin-top: 10px;
