@@ -38,5 +38,8 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('css/style.css'),
-  ]
+  ],
+  optimization: {
+    minimize: true
+  }
 };
