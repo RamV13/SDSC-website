@@ -4859,17 +4859,42 @@ a.navbar-item,
 .section {
   padding: 1rem 1.5rem 3rem 1.5rem; }
 
+.home.box {
+  padding: 0; }
+
+.home.cover {
+  height: 100%;
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 6px;
+  background-color: transparent;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out; }
+
+.home.cover:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer; }
+
+.home.title {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
 .education {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover, url(../img/education.jpg) no-repeat center/cover; }
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover, url(../img/education.jpg) no-repeat center/cover;
+  height: 50vh; }
 
 .health {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover, url(../img/health.jpg) no-repeat center/cover; }
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover, url(../img/health.jpg) no-repeat center/cover;
+  height: 50vh; }
 
 .community {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover, url(../img/community.jpg) no-repeat center/cover; }
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover, url(../img/community.jpg) no-repeat center/cover;
+  height: 50vh; }
 
 .multifaith {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover; }
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover;
+  height: 50vh; }
 
 .about.box {
   box-shadow: 0 0 20px 5px #EEEEEE; }
