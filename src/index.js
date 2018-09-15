@@ -17,7 +17,6 @@ $('.navbar-item').click(function() {
 
 const homeID = 'home';
 const contentID = 'content';
-const LOADING_HTML = '<div style="height: 50vh"></div>';
 const LOADING_CLASS = 'is-loading';
 const LOADING_INTERVAL = 50; // (ms)
 var pageFilled = false;
@@ -32,7 +31,6 @@ var navMap = {
 
 // initialize page HTML once the page is rendered
 $(function() {
-  $('#' + contentID).html(LOADING_HTML);
   var navButtonID = curNavButton();
   if (!navButtonID) navButtonID = homeID;
   updatePage(navButtonID);
@@ -58,7 +56,7 @@ function updatePage(navButtonID) {
     if (navMap[navButtonID]) {
       $('#' + contentID).html(navMap[navButtonID]);
     } else {
-      $('#' + contentID).html(LOADING_HTML);
+      $('#' + contentID).empty();
       $('#' + contentID).addClass(LOADING_CLASS);
       setTimeout(function() { updatePage(navButtonID); }, LOADING_INTERVAL);
     }

@@ -4915,6 +4915,9 @@ a.navbar-item,
   .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #fafafa; } }
 
+html, body {
+  height: 100%; }
+
 @media screen and (min-width: 1088px) {
   .container {
     max-width: 1020px;
@@ -4927,6 +4930,9 @@ a.navbar-item,
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
 
+#content {
+  min-height: 100%; }
+
 .section {
   padding: 1rem 1.5rem 3rem 1.5rem; }
 
@@ -4936,7 +4942,7 @@ a.navbar-item,
   opacity: 0.5; }
   .element.is-loading:after {
     position: absolute;
-    top: calc(50% - 2.5em);
+    top: calc(30% - 2.5em);
     left: calc(50% - 2.5em);
     width: 5em;
     height: 5em;
