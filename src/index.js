@@ -101,13 +101,14 @@ function shuffleQuote() {
     quoteIndex = Math.floor(Math.random()*quotes.length);
   }
   var quote = quotes[quoteIndex].quote;
-  if (quotes[quoteIndex].isSai) {
-    $('#' + quoteSubtitleID).fadeTo('slow', 1);
-  } else {
-    $('#' + quoteSubtitleID).fadeTo('slow', 0);
-  }
+  var isSai = quotes[quoteIndex].isSai;
   quotes.splice(quoteIndex, 1);
   $('#' + quoteID).fadeOut('slow', function() {
+    if (isSai) {
+      $('#' + quoteSubtitleID).fadeTo('slow', 1);
+    } else {
+      $('#' + quoteSubtitleID).fadeTo('slow', 0);
+    }
     $('#' + quoteID).html('"' + quote + '"').fadeIn('slow');
   });
   setTimeout(shuffleQuote, QUOTE_TIME * 1000);
