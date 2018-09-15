@@ -83,23 +83,29 @@ window.onpopstate = function(e) {
 // Quote Bank Management
 
 const quoteID = 'quote';
+const quoteSubtitleID = 'quote-subtitle';
 const QUOTE_TIME = 15; // (s)
 const QUOTES = [
-  'Love All, Serve All',
-  'Help Ever, Hurt Never',
-  'Hands that serve are holier than lips that pray',
-  'There is only one religion, the religion of love',
-  'Service to man is service to God'
+  {quote: 'Love All, Serve All', isSai: true},
+  {quote: 'Help Ever, Hurt Never', isSai: true},
+  {quote: 'Hands that serve are holier than lips that pray', isSai: false},
+  {quote: 'There is only one religion, the religion of love', isSai: true},
+  {quote: 'Service to man is service to God', isSai: false}
 ];
 var quotes = QUOTES.slice(1,5);
 
 function shuffleQuote() {
   if (quotes.length == 0) quotes = QUOTES.slice();
   var quoteIndex = Math.floor(Math.random()*quotes.length);
-  while (('"' + quotes[quoteIndex] + '"') == $('#' + quoteID).html()) {
+  while (('"' + quotes[quoteIndex].quote + '"') == $('#' + quoteID).html()) {
     quoteIndex = Math.floor(Math.random()*quotes.length);
   }
-  var quote = quotes[quoteIndex];
+  var quote = quotes[quoteIndex].quote;
+  if (quotes[quoteIndex].isSai) {
+    $('#' + quoteSubtitleID).fadeTo('slow', 1);
+  } else {
+    $('#' + quoteSubtitleID).fadeTo('slow', 0);
+  }
   quotes.splice(quoteIndex, 1);
   $('#' + quoteID).fadeOut('slow', function() {
     $('#' + quoteID).html('"' + quote + '"').fadeIn('slow');
