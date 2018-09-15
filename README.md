@@ -19,7 +19,7 @@ Repository containing the website infrastructure for Sarva Dharma Service Center
 
 ### Utilities
 - `npm run serve` will launch the development server so the website can be accesses at `http://localhost:8080`
-- `npm run build` triggers the Webpack build process
+- `npm run build` builds all of the assets in a minified form for production into `dist/`
 - `npm run watch` watches the `src/` directory for changes and triggers the Webpack build process when changes occur
 
 ### Modifications
