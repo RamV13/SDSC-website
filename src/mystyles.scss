@@ -19,6 +19,7 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
 // Import only what you need from Bulma
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/components/level.sass";
 @import "../node_modules/bulma/sass/elements/box.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/container.sass";
@@ -100,8 +101,9 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
 }
 
 // Contact
-.contact.logo {
+.contact.images { // used purely for sass loading
     background: url("img/logo.svg");
+    background: url("img/venmo.png");
 }
 .card {
     box-shadow: 0 0 20px 5px #EEEEEE;
@@ -113,6 +115,9 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
 }
 hr.contact {
     margin: 0.75rem 0;
+}
+.venmo {
+   height: 28px;
 }
 
 .footer {
