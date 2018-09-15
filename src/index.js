@@ -17,6 +17,9 @@ $('.navbar-item').click(function() {
 
 const homeID = 'home';
 const contentID = 'content';
+const LOADING_HTML = '<div style="height: 50vh"></div>';
+const LOADING_CLASS = 'is-loading';
+const LOADING_INTERVAL = 50; // (ms)
 var pageFilled = false;
 // mapping between navbar items and page HTML
 var navMap = {
@@ -29,6 +32,7 @@ var navMap = {
 
 // initialize page HTML once the page is rendered
 $(function() {
+  $('#' + contentID).html(LOADING_HTML);
   var navButtonID = curNavButton();
   if (!navButtonID) navButtonID = homeID;
   updatePage(navButtonID);
@@ -44,12 +48,21 @@ function curNavButton() {
 function updatePage(navButtonID) {
   if (!(navButtonID in navMap)) return;
 
+  if ($('#' + contentID).hasClass(LOADING_CLASS) && !navMap[navButtonID]) {
+    setTimeout(function() { updatePage(navButtonID); }, LOADING_INTERVAL);
+    return;
+  }
+
   $('#' + contentID).fadeOut(function() {
+    $('#' + contentID).removeClass(LOADING_CLASS);
     if (navMap[navButtonID]) {
-      $('#' + contentID).html(navMap[navButtonID]).fadeIn();
+      $('#' + contentID).html(navMap[navButtonID]);
     } else {
-      // TODO(ramv13): loading progressbar with timeout
+      $('#' + contentID).html(LOADING_HTML);
+      $('#' + contentID).addClass(LOADING_CLASS);
+      setTimeout(function() { updatePage(navButtonID); }, LOADING_INTERVAL);
     }
+    $('#' + contentID).fadeIn();
   });
 }
 

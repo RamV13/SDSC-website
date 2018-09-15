@@ -31,7 +31,7 @@
 .subtitle:not(:last-child) {
   margin-bottom: 1.5rem; }
 
-.button.is-loading::after, .select.is-loading::after, .control.is-loading::after {
+.button.is-loading::after, .select.is-loading::after, .control.is-loading::after, .element.is-loading:after {
   animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
@@ -4929,6 +4929,18 @@ a.navbar-item,
 
 .section {
   padding: 1rem 1.5rem 3rem 1.5rem; }
+
+.element.is-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.5; }
+  .element.is-loading:after {
+    position: absolute;
+    top: calc(50% - 2.5em);
+    left: calc(50% - 2.5em);
+    width: 5em;
+    height: 5em;
+    border-width: 0.25em; }
 
 .home.box {
   padding: 0; }
