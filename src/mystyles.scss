@@ -25,6 +25,7 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
 @import "../node_modules/bulma/sass/elements/container.sass";
 @import "../node_modules/bulma/sass/elements/content.sass";
 @import "../node_modules/bulma/sass/elements/form.sass";
+@import "../node_modules/bulma/sass/elements/icon.sass";
 @import "../node_modules/bulma/sass/elements/image.sass";
 @import "../node_modules/bulma/sass/elements/table.sass";
 @import "../node_modules/bulma/sass/elements/title.sass";
@@ -79,6 +80,19 @@ html, body {
             border-width: 0.25em;
         }
     }
+}
+
+.input {
+    border-color: #dbdbdb;
+    margin-bottom: 10px;
+}
+
+.select {
+  margin-bottom: 10px;
+}
+
+.select select {
+    border-color: #dbdbdb;
 }
 
 // Home
@@ -143,6 +157,12 @@ hr.contact {
 }
 .venmo {
    height: 28px;
+}
+
+// Join
+form.join {
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .footer {

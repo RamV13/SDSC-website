@@ -2643,6 +2643,22 @@ a.box:active {
   .control.is-loading.is-large:after {
     font-size: 1.5rem; }
 
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem; }
+  .icon.is-small {
+    height: 1rem;
+    width: 1rem; }
+  .icon.is-medium {
+    height: 2rem;
+    width: 2rem; }
+  .icon.is-large {
+    height: 3rem;
+    width: 3rem; }
+
 .image {
   display: block;
   position: relative; }
@@ -4948,6 +4964,16 @@ html, body {
     height: 5em;
     border-width: 0.25em; }
 
+.input {
+  border-color: #dbdbdb;
+  margin-bottom: 10px; }
+
+.select {
+  margin-bottom: 10px; }
+
+.select select {
+  border-color: #dbdbdb; }
+
 .home.box {
   padding: 0; }
 
@@ -5005,6 +5031,10 @@ hr.contact {
 
 .venmo {
   height: 28px; }
+
+form.join {
+  max-width: 650px;
+  margin: 0 auto; }
 
 .footer {
   margin-top: 10px; }
