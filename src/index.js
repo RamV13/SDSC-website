@@ -21,13 +21,21 @@ const LOADING_CLASS = 'is-loading';
 const LOADING_INTERVAL = 50; // (ms)
 var pageFilled = false;
 // tree of mappings between navigation buttons and page HTML
-var RESERVED_KEYS = ['html', 'fetching'];
+var RESERVED_KEYS = ['html', 'fetching', 'toc'];
 var navMap = {
   home: {
-    education: { },
-    health: { },
-    community: { },
-    multifaith: { }
+    education: {
+      toc: true
+    },
+    health: {
+      toc: true
+    },
+    community: {
+      toc: true
+    },
+    multifaith: {
+      toc: true
+    }
   },
   about: { },
   events: { },
@@ -96,6 +104,9 @@ function updatePage(pageID) {
     if (pageMap[pageID].html) {
       unregisterPageNavigators(prevRegisteredMap);
       $('#' + contentID).html(pageMap[pageID].html);
+      if (pageMap[pageID].toc) {
+        createTOC();
+      }
       registerPageNavigators(pageMap[pageID]);
       prevRegisteredMap = pageMap[pageID];
     } else {
@@ -148,6 +159,21 @@ window.onpopstate = function(e) {
 
 // linking navbar items to their respective page HTML
 $(function() { registerPageNavigators(navMap); });
+
+// Page Management
+
+// automatically creates a table of contents for the current page
+function createTOC() {
+  $('h4').each(function(index) {
+    var id = $(this).attr('id');
+    $('#toc').append('<a id=' + id + '-link class="is-size-3">' + (index + 1) + '. ' + $(this).text() + '</a><br>');
+    $('#' + id + '-link').click(function() {
+      $('html, body').animate({
+        scrollTop: $('#' + id).offset().top - $('.navbar').height() - 10
+      }, 1000);
+    });
+  });
+}
 
 // Quote Bank Management
 

@@ -13,16 +13,4 @@
     <h4 id="nutrition" class="title is-4 has-text-primary">Nutrition Workshops</h4>
     <p>Eat right and stay healthy! Workshops are conducted at the Center presenting creative culinary ideas that are tasty and zesty! There will be a special focus on diabetes and methods to control it with proper diet.</p>
   </div>
-
-  <script>
-    $('h4').each(function(index) {
-      var id = $(this).attr('id');
-      $('#toc').append('<a id=' + id + '-link class="is-size-3">' + (index + 1) + '. ' + $(this).text() + '</a><br>');
-      $('#' + id + '-link').click(function() {
-        $('html, body').animate({
-          scrollTop: $('#' + id).offset().top - $('.navbar').height() - 10
-        }, 1000);
-      });
-    });
-  </script>
 </div>
