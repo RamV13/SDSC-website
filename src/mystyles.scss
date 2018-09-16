@@ -41,6 +41,16 @@ html, body {
     height: 100%;
 }
 
+a {
+    color: #2196F3;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #64B5F6;
+}
+
 @media screen and (min-width: 1088px) {
     .container {
         max-width: 1020px;
@@ -88,11 +98,16 @@ html, body {
 }
 
 .select {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .select select {
     border-color: #dbdbdb;
+}
+
+.toc {
+    padding: 1rem 1.5rem;
+    background: #FAFAFA;
 }
 
 // Home
@@ -117,19 +132,19 @@ html, body {
     top: 50%;
     transform: translateY(-50%);
 }
-.education {
+.home.education {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/education.jpg") no-repeat center / cover;
     height: 50vh;
 }
-.health {
+.home.health {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/health.jpg") no-repeat center / cover;
     height: 50vh;
 }
-.community {
+.home.community {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/community.jpg") no-repeat center / cover;
     height: 50vh;
 }
-.multifaith {
+.home.multifaith {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover /* , url("img/multifaith.jpg") no-repeat center / cover */;
     height: 50vh;
 }
@@ -163,6 +178,11 @@ hr.contact {
 form.join {
     max-width: 650px;
     margin: 0 auto;
+}
+
+// Health
+.health.section {
+    padding: 1rem 1.5rem 3rem 0;
 }
 
 .footer {
