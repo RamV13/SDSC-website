@@ -129,7 +129,7 @@ function registerPageNavigators(pageMap) {
         updatePage(pageButtonID);
         window.history.pushState({
           pageButtonID: pageButtonID
-        }, '', '#' + $(this).attr('href'));
+        }, '', '#' + pageButtonID + '.html');
       }
       return false;
     });
