@@ -37,69 +37,69 @@ var navMap = {
 
 // initialize page HTML once the page is rendered
 $(function() {
-  var pageButtonID = curPageButton();
-  updatePage(pageButtonID);
+  var pageID = currentPage();
+  updatePage(pageID);
   window.history.replaceState({
-    pageButtonID: pageButtonID
-  }, '', '#' + pageButtonID);
+    pageID: pageID
+  }, '', '#' + pageID);
 });
 
-function curPageButton() {
+function currentPage() {
   return window.location.hash.substring(1, window.location.hash.length) ||
          homeID;
 }
 
-// recurses the tree of page navigating buttons to find the mapping if it exists
-function findPageMap(pageMap, pageButtonID) {
-  if (pageButtonID in pageMap) return pageMap;
+// recurses the tree of page navigation to find the mapping if it exists
+function findPageMap(pageMap, pageID) {
+  if (pageID in pageMap) return pageMap;
   return Object.keys(pageMap).reduce(function(acc, id) {
     if (RESERVED_KEYS.includes(id)) return acc;
-    return findPageMap(pageMap[id], pageButtonID) || acc;
+    return findPageMap(pageMap[id], pageID) || acc;
   }, null);
 }
 
 // fetch the HTML for a page in the page map
-function fetchHTML(pageMap, pageButtonID) {
-  if (!pageMap[pageButtonID].html && !pageMap[pageButtonID].fetching) {
-    console.log('Fetching ' + pageButtonID);
-    pageMap[pageButtonID].fetching = true;
-    $.get(pageButtonID + '.html',
+function fetchHTML(pageMap, pageID) {
+  if (!pageMap[pageID].html && !pageMap[pageID].fetching) {
+    console.log('Fetching ' + pageID);
+    pageMap[pageID].fetching = true;
+    $.get(pageID + '.html',
       function(data) {
-        pageMap[pageButtonID].html = data;
-        pageMap[pageButtonID].fetching = false;
+        pageMap[pageID].html = data;
+        pageMap[pageID].fetching = false;
       },
       'html'
     ).fail(function() {
-      pageMap[pageButtonID].fetching = false;
-      fetchHTML(pageMap, pageButtonID);
+      pageMap[pageID].fetching = false;
+      fetchHTML(pageMap, pageID);
     });
   }
 }
 
 var prevRegisteredMap;
-function updatePage(pageButtonID) {
-  var pageMap = findPageMap(navMap, pageButtonID);
+function updatePage(pageID) {
+  var pageMap = findPageMap(navMap, pageID);
   if (!pageMap) return;
 
   if ($('#' + contentID).hasClass(LOADING_CLASS) &&
-      !pageMap[pageButtonID].html) {
-    fetchHTML(pageMap, pageButtonID);
-    setTimeout(function() { updatePage(pageButtonID); }, LOADING_INTERVAL);
+      !pageMap[pageID].html) {
+    fetchHTML(pageMap, pageID);
+    setTimeout(function() { updatePage(pageID); }, LOADING_INTERVAL);
     return;
   }
 
   $('#' + contentID).fadeOut(function() {
     $('#' + contentID).removeClass(LOADING_CLASS);
-    if (pageMap[pageButtonID].html) {
+    if (pageMap[pageID].html) {
       unregisterPageNavigators(prevRegisteredMap);
-      $('#' + contentID).html(pageMap[pageButtonID].html);
-      registerPageNavigators(pageMap[pageButtonID]);
-      prevRegisteredMap = pageMap[pageButtonID];
+      $('#' + contentID).html(pageMap[pageID].html);
+      registerPageNavigators(pageMap[pageID]);
+      prevRegisteredMap = pageMap[pageID];
     } else {
       $('#' + contentID).empty();
       $('#' + contentID).addClass(LOADING_CLASS);
-      fetchHTML(pageMap, pageButtonID);
-      setTimeout(function() { updatePage(pageButtonID); }, LOADING_INTERVAL);
+      fetchHTML(pageMap, pageID);
+      setTimeout(function() { updatePage(pageID); }, LOADING_INTERVAL);
     }
     $('#' + contentID).fadeIn();
   });
@@ -108,28 +108,28 @@ function updatePage(pageButtonID) {
 function unregisterPageNavigators(pageMap) {
   if (!pageMap) return;
 
-  Object.keys(pageMap).forEach(function(pageButtonID) {
-    if (RESERVED_KEYS.includes(pageButtonID)) return;
-    $('#' + pageButtonID).unbind();
+  Object.keys(pageMap).forEach(function(pageID) {
+    if (RESERVED_KEYS.includes(pageID)) return;
+    $('#' + pageID).unbind();
   });
 }
 
 function registerPageNavigators(pageMap) {
   if (!pageMap) return;
 
-  Object.keys(pageMap).forEach(function(pageButtonID) {
-    if (RESERVED_KEYS.includes(pageButtonID)) return;
+  Object.keys(pageMap).forEach(function(pageID) {
+    if (RESERVED_KEYS.includes(pageID)) return;
 
     // prefetch HTML for each page if it has not been downloaded already
-    fetchHTML(pageMap, pageButtonID);
+    fetchHTML(pageMap, pageID);
 
     // register click callbacks that render corresponding page HTML
-    $('#' + pageButtonID).click(function() {
-      if (pageButtonID != curPageButton()) {
-        updatePage(pageButtonID);
+    $('#' + pageID).click(function() {
+      if (pageID != currentPage()) {
+        updatePage(pageID);
         window.history.pushState({
-          pageButtonID: pageButtonID
-        }, '', '#' + pageButtonID);
+          pageID: pageID
+        }, '', '#' + pageID);
       }
       return false;
     });
@@ -137,7 +137,7 @@ function registerPageNavigators(pageMap) {
 }
 
 window.onpopstate = function(e) {
-  updatePage(e.state.pageButtonID);
+  updatePage(e.state.pageID);
 };
 
 // linking navbar items to their respective page HTML
