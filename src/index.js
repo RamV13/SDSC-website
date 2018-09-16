@@ -166,7 +166,7 @@ $(function() { registerPageNavigators(navMap); });
 function createTOC() {
   $('h4').each(function(index) {
     var id = $(this).attr('id');
-    $('#toc').append('<a id=' + id + '-link class="is-size-4">' + (index + 1) + '. ' + $(this).text() + '</a><br>');
+    $('#toc').append('<a id=' + id + '-link class="is-size-4">' + $(this).text() + '</a><br>');
     $('#' + id + '-link').click(function() {
       $('html, body').animate({
         scrollTop: $('#' + id).offset().top - $('.navbar').height() - 10

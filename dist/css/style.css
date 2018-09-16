@@ -5012,7 +5012,7 @@ a:hover {
   height: 50vh; }
 
 .home.health {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover, url(../img/health.jpg) no-repeat center/cover;
   height: 50vh; }
 
 .home.community {
