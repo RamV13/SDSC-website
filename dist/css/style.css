@@ -5012,7 +5012,7 @@ a:hover {
   height: 50vh; }
 
 .home.health {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover, url(../img/health.jpg) no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0%/cover;
   height: 50vh; }
 
 .home.community {
@@ -5025,10 +5025,6 @@ a:hover {
 
 .about.box {
   box-shadow: 0 0 20px 5px #EEEEEE; }
-
-.contact.images {
-  background: url(../img/logo.png);
-  background: url(../img/venmo.png); }
 
 .card {
   box-shadow: 0 0 20px 5px #EEEEEE;
@@ -5051,8 +5047,19 @@ form.join {
 .health.section {
   padding: 1rem 1.5rem 3rem 0; }
 
+.page.image {
+  max-height: 25rem;
+  box-shadow: 0 0 20px 6px #999999;
+  margin: 0 auto; }
+
 .footer {
   margin-top: 10px; }
 
 .footer-para {
   padding: 6px 0; }
+
+.images {
+  background: url(../img/logo.png);
+  background: url(../img/nutrition.jpg);
+  background: url(../img/venmo.png);
+  background: url(../img/yoga.jpg); }

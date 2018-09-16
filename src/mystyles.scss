@@ -137,7 +137,7 @@ a:hover {
     height: 50vh;
 }
 .home.health {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/health.jpg") no-repeat center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover /* , url("img/health.jpg") no-repeat center / cover */;
     height: 50vh;
 }
 .home.community {
@@ -155,10 +155,6 @@ a:hover {
 }
 
 // Contact
-.contact.images { // used purely for sass loading
-    background: url("img/logo.png");
-    background: url("img/venmo.png");
-}
 .card {
     box-shadow: 0 0 20px 5px #EEEEEE;
     height: 100%;
@@ -185,10 +181,23 @@ form.join {
     padding: 1rem 1.5rem 3rem 0;
 }
 
+.page.image {
+    max-height: 25rem;
+    box-shadow: 0 0 20px 6px #999999;
+    margin: 0 auto;
+}
+
 .footer {
     margin-top: 10px;
 }
 
 .footer-para {
     padding: 6px 0;
+}
+
+.images { // used purely for sass loading
+    background: url("img/logo.png");
+    background: url("img/nutrition.jpg");
+    background: url("img/venmo.png");
+    background: url("img/yoga.jpg");
 }
