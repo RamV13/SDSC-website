@@ -21,7 +21,7 @@ const LOADING_CLASS = 'is-loading';
 const LOADING_INTERVAL = 50; // (ms)
 var pageFilled = false;
 // tree of mappings between navigation buttons and page HTML
-const HTML_KEY = 'html';
+var RESERVED_KEYS = ['html', 'fetching'];
 var navMap = {
   home: {
     education: { },
@@ -41,7 +41,7 @@ $(function() {
   updatePage(pageButtonID);
   window.history.replaceState({
     pageButtonID: pageButtonID
-  }, '', '#' + $('#' + pageButtonID).attr('href'));
+  }, '', '#' + pageButtonID + '.html');
 });
 
 function curPageButton() {
@@ -53,9 +53,27 @@ function curPageButton() {
 function findPageMap(pageMap, pageButtonID) {
   if (pageButtonID in pageMap) return pageMap;
   return Object.keys(pageMap).reduce(function(acc, id) {
-    if (id == HTML_KEY) return acc;
+    if (RESERVED_KEYS.includes(id)) return acc;
     return findPageMap(pageMap[id], pageButtonID) || acc;
   }, null);
+}
+
+// fetch the HTML for a page in the page map
+function fetchHTML(pageMap, pageButtonID) {
+  if (!pageMap[pageButtonID].html && !pageMap[pageButtonID].fetching) {
+    console.log('Fetching ' + pageButtonID);
+    pageMap[pageButtonID].fetching = true;
+    $.get(pageButtonID + '.html',
+      function(data) {
+        pageMap[pageButtonID].html = data;
+        pageMap[pageButtonID].fetching = false;
+      },
+      'html'
+    ).fail(function() {
+      pageMap[pageButtonID].fetching = false;
+      fetchHTML(pageMap, pageButtonID);
+    });
+  }
 }
 
 var prevRegisteredMap;
@@ -65,6 +83,7 @@ function updatePage(pageButtonID) {
 
   if ($('#' + contentID).hasClass(LOADING_CLASS) &&
       !pageMap[pageButtonID].html) {
+    fetchHTML(pageMap, pageButtonID);
     setTimeout(function() { updatePage(pageButtonID); }, LOADING_INTERVAL);
     return;
   }
@@ -79,6 +98,7 @@ function updatePage(pageButtonID) {
     } else {
       $('#' + contentID).empty();
       $('#' + contentID).addClass(LOADING_CLASS);
+      fetchHTML(pageMap, pageButtonID);
       setTimeout(function() { updatePage(pageButtonID); }, LOADING_INTERVAL);
     }
     $('#' + contentID).fadeIn();
@@ -89,7 +109,7 @@ function unregisterPageNavigators(pageMap) {
   if (!pageMap) return;
 
   Object.keys(pageMap).forEach(function(pageButtonID) {
-    if (pageButtonID == HTML_KEY) return;
+    if (RESERVED_KEYS.includes(pageButtonID)) return;
     $('#' + pageButtonID).unbind();
   });
 }
@@ -98,17 +118,10 @@ function registerPageNavigators(pageMap) {
   if (!pageMap) return;
 
   Object.keys(pageMap).forEach(function(pageButtonID) {
-    if (pageButtonID == HTML_KEY) return;
+    if (RESERVED_KEYS.includes(pageButtonID)) return;
 
     // prefetch HTML for each page if it has not been downloaded already
-    if (!pageMap[pageButtonID].html) {
-      $.get($('#' + pageButtonID).attr('href'),
-        function(data) {
-          pageMap[pageButtonID].html = data;
-        },
-        'html'
-      );
-    }
+    fetchHTML(pageMap, pageButtonID);
 
     // register click callbacks that render corresponding page HTML
     $('#' + pageButtonID).click(function() {
