@@ -44,6 +44,7 @@ $(function() {
   }, '', '#' + pageID);
 });
 
+// retrieves the current page based on the hash in the current URL
 function currentPage() {
   return window.location.hash.substring(1, window.location.hash.length) ||
          homeID;
@@ -76,7 +77,10 @@ function fetchHTML(pageMap, pageID) {
   }
 }
 
+// the map that was previously registered with click callbacks
 var prevRegisteredMap;
+
+// updates the current page to a new page
 function updatePage(pageID) {
   var pageMap = findPageMap(navMap, pageID);
   if (!pageMap) return;
@@ -105,6 +109,7 @@ function updatePage(pageID) {
   });
 }
 
+// unbinds all events from the pages in the provided page map
 function unregisterPageNavigators(pageMap) {
   if (!pageMap) return;
 
@@ -114,6 +119,7 @@ function unregisterPageNavigators(pageMap) {
   });
 }
 
+// fetches page HTML and binds click callbacks to page navigation
 function registerPageNavigators(pageMap) {
   if (!pageMap) return;
 
@@ -136,6 +142,7 @@ function registerPageNavigators(pageMap) {
   });
 }
 
+// updates the page according to browser navigation
 window.onpopstate = function(e) {
   updatePage(e.state.pageID);
 };
@@ -157,6 +164,7 @@ const QUOTES = [
 ];
 var quotes = QUOTES.slice(1,5);
 
+// shuffles the quote being shown
 function shuffleQuote() {
   if (quotes.length == 0) quotes = QUOTES.slice();
   var quoteIndex = Math.floor(Math.random()*quotes.length);
