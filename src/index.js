@@ -65,25 +65,27 @@ function updatePage(navButtonID) {
 }
 
 // linking navbar items to their respective page HTML
-Object.keys(navMap).forEach(function(navButtonID) {
-  // prefetch HTML for each page
-  var link = $(this).attr('href');
-  $.get($('#' + navButtonID).attr('href'),
-    function(data) {
-      navMap[navButtonID] = data;
-    },
-    'html'
-  );
+$(function() {
+  Object.keys(navMap).forEach(function(navButtonID) {
+    // prefetch HTML for each page
+    var link = $(this).attr('href');
+    $.get($('#' + navButtonID).attr('href'),
+      function(data) {
+        navMap[navButtonID] = data;
+      },
+      'html'
+    );
 
-  // register click callbacks that render corresponding page HTML
-  $('#' + navButtonID).click(function() {
-    if (navButtonID != curNavButton()) {
-      updatePage(navButtonID);
-      window.history.pushState({
-        navButtonID: navButtonID
-      }, '', '#' + $(this).attr('href'));
-    }
-    return false;
+    // register click callbacks that render corresponding page HTML
+    $('#' + navButtonID).click(function() {
+      if (navButtonID != curNavButton()) {
+        updatePage(navButtonID);
+        window.history.pushState({
+          navButtonID: navButtonID
+        }, '', '#' + $(this).attr('href'));
+      }
+      return false;
+    });
   });
 });
 
@@ -124,4 +126,6 @@ function shuffleQuote() {
   });
   setTimeout(shuffleQuote, QUOTE_TIME * 1000);
 }
-setTimeout(shuffleQuote, QUOTE_TIME * 1000);
+$(function() {
+  setTimeout(shuffleQuote, QUOTE_TIME * 1000);
+});
