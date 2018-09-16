@@ -41,11 +41,11 @@ $(function() {
   updatePage(pageButtonID);
   window.history.replaceState({
     pageButtonID: pageButtonID
-  }, '', '#' + pageButtonID + '.html');
+  }, '', '#' + pageButtonID);
 });
 
 function curPageButton() {
-  return window.location.hash.substring(1, window.location.hash.length - 5) ||
+  return window.location.hash.substring(1, window.location.hash.length) ||
          homeID;
 }
 
@@ -129,7 +129,7 @@ function registerPageNavigators(pageMap) {
         updatePage(pageButtonID);
         window.history.pushState({
           pageButtonID: pageButtonID
-        }, '', '#' + pageButtonID + '.html');
+        }, '', '#' + pageButtonID);
       }
       return false;
     });
