@@ -20,78 +20,115 @@ const contentID = 'content';
 const LOADING_CLASS = 'is-loading';
 const LOADING_INTERVAL = 50; // (ms)
 var pageFilled = false;
-// mapping between navbar items and page HTML
+// tree of mappings between navigation buttons and page HTML
+const HTML_KEY = 'html';
 var navMap = {
-  'home': '',
-  'about': '',
-  'events': '',
-  'contact': '',
-  'join': ''
+  home: {
+    education: { },
+    health: { },
+    community: { },
+    multifaith: { }
+  },
+  about: { },
+  events: { },
+  contact: { },
+  join: { }
 };
 
 // initialize page HTML once the page is rendered
 $(function() {
-  var navButtonID = curNavButton();
-  if (!navButtonID) navButtonID = homeID;
-  updatePage(navButtonID);
+  var pageButtonID = curPageButton();
+  updatePage(pageButtonID);
   window.history.replaceState({
-    navButtonID: navButtonID
-  }, '', '#' + $('#' + navButtonID).attr('href'));
+    pageButtonID: pageButtonID
+  }, '', '#' + $('#' + pageButtonID).attr('href'));
 });
 
-function curNavButton() {
-  return window.location.hash.substring(1, window.location.hash.length - 5);
+function curPageButton() {
+  return window.location.hash.substring(1, window.location.hash.length - 5) ||
+         homeID;
 }
 
-function updatePage(navButtonID) {
-  if (!(navButtonID in navMap)) return;
+// recurses the tree of page navigating buttons to find the mapping if it exists
+function findPageMap(pageMap, pageButtonID) {
+  if (pageButtonID in pageMap) return pageMap;
+  return Object.keys(pageMap).reduce(function(acc, id) {
+    if (id == HTML_KEY) return acc;
+    return findPageMap(pageMap[id], pageButtonID) || acc;
+  }, null);
+}
 
-  if ($('#' + contentID).hasClass(LOADING_CLASS) && !navMap[navButtonID]) {
-    setTimeout(function() { updatePage(navButtonID); }, LOADING_INTERVAL);
+var prevRegisteredMap;
+function updatePage(pageButtonID) {
+  var pageMap = findPageMap(navMap, pageButtonID);
+  if (!pageMap) return;
+
+  if ($('#' + contentID).hasClass(LOADING_CLASS) &&
+      !pageMap[pageButtonID].html) {
+    setTimeout(function() { updatePage(pageButtonID); }, LOADING_INTERVAL);
     return;
   }
 
   $('#' + contentID).fadeOut(function() {
     $('#' + contentID).removeClass(LOADING_CLASS);
-    if (navMap[navButtonID]) {
-      $('#' + contentID).html(navMap[navButtonID]);
+    if (pageMap[pageButtonID].html) {
+      unregisterPageNavigators(prevRegisteredMap);
+      $('#' + contentID).html(pageMap[pageButtonID].html);
+      registerPageNavigators(pageMap[pageButtonID]);
+      prevRegisteredMap = pageMap[pageButtonID];
     } else {
       $('#' + contentID).empty();
       $('#' + contentID).addClass(LOADING_CLASS);
-      setTimeout(function() { updatePage(navButtonID); }, LOADING_INTERVAL);
+      setTimeout(function() { updatePage(pageButtonID); }, LOADING_INTERVAL);
     }
     $('#' + contentID).fadeIn();
   });
 }
 
-// linking navbar items to their respective page HTML
-$(function() {
-  Object.keys(navMap).forEach(function(navButtonID) {
-    // prefetch HTML for each page
-    var link = $(this).attr('href');
-    $.get($('#' + navButtonID).attr('href'),
-      function(data) {
-        navMap[navButtonID] = data;
-      },
-      'html'
-    );
+function unregisterPageNavigators(pageMap) {
+  if (!pageMap) return;
+
+  Object.keys(pageMap).forEach(function(pageButtonID) {
+    if (pageButtonID == HTML_KEY) return;
+    $('#' + pageButtonID).unbind();
+  });
+}
+
+function registerPageNavigators(pageMap) {
+  if (!pageMap) return;
+
+  Object.keys(pageMap).forEach(function(pageButtonID) {
+    if (pageButtonID == HTML_KEY) return;
+
+    // prefetch HTML for each page if it has not been downloaded already
+    if (!pageMap[pageButtonID].html) {
+      $.get($('#' + pageButtonID).attr('href'),
+        function(data) {
+          pageMap[pageButtonID].html = data;
+        },
+        'html'
+      );
+    }
 
     // register click callbacks that render corresponding page HTML
-    $('#' + navButtonID).click(function() {
-      if (navButtonID != curNavButton()) {
-        updatePage(navButtonID);
+    $('#' + pageButtonID).click(function() {
+      if (pageButtonID != curPageButton()) {
+        updatePage(pageButtonID);
         window.history.pushState({
-          navButtonID: navButtonID
+          pageButtonID: pageButtonID
         }, '', '#' + $(this).attr('href'));
       }
       return false;
     });
   });
-});
+}
 
 window.onpopstate = function(e) {
-  updatePage(e.state.navButtonID);
+  updatePage(e.state.pageButtonID);
 };
+
+// linking navbar items to their respective page HTML
+$(function() { registerPageNavigators(navMap); });
 
 // Quote Bank Management
 
