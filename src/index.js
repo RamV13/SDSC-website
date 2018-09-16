@@ -62,7 +62,6 @@ function findPageMap(pageMap, pageID) {
 // fetch the HTML for a page in the page map
 function fetchHTML(pageMap, pageID) {
   if (!pageMap[pageID].html && !pageMap[pageID].fetching) {
-    console.log('Fetching ' + pageID);
     pageMap[pageID].fetching = true;
     $.get(pageID + '.html',
       function(data) {
