@@ -105,6 +105,12 @@ a:hover {
     border-color: #dbdbdb;
 }
 
+.card {
+    box-shadow: 0 0 20px 5px #EEEEEE;
+    height: 100%;
+    width: 100%;
+}
+
 .toc {
     padding: 1rem 1.5rem;
     background: #FAFAFA;
@@ -155,19 +161,22 @@ a:hover {
 }
 
 // Contact
-.card {
-    box-shadow: 0 0 20px 5px #EEEEEE;
-    height: 100%;
+.contact.tile {
+    margin-top: 20px;
 }
 .contact.media {
     margin-bottom: 0 !important;
     justify-content: center;
 }
+.contact.image {
+    max-height: 25rem;
+    margin: 0 auto;
+}
 hr.contact {
     margin: 0.75rem 0;
 }
 .venmo {
-   height: 28px;
+    height: 28px;
 }
 
 // Join
@@ -200,4 +209,5 @@ form.join {
     background: url("img/nutrition.jpg");
     background: url("img/venmo.png");
     background: url("img/yoga.jpg");
+    background: url("img/facilities.jpg");
 }
