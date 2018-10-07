@@ -51,6 +51,10 @@ a:hover {
     color: #64B5F6;
 }
 
+p {
+    text-align: justify;
+}
+
 @media screen and (min-width: 1088px) {
     .container {
         max-width: 1020px;
@@ -111,9 +115,21 @@ a:hover {
     width: 100%;
 }
 
+.unjustify {
+    text-align: left !important;
+}
+
 .toc {
     padding: 1rem 1.5rem;
     background: #FAFAFA;
+}
+
+.footer {
+    margin-top: 10px;
+}
+
+.footer-para {
+    padding: 6px 0;
 }
 
 // Home
@@ -137,6 +153,7 @@ a:hover {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    text-align: center;
 }
 .home.education {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/education.jpg") no-repeat center / cover;
@@ -187,17 +204,11 @@ form.join {
 
 .page.image {
     max-height: 25rem;
-    box-shadow: 0 0 20px 6px #999999;
+    box-shadow: 0 0 20px 6px #DDDDDD;
     margin: 0 auto;
 }
 
-.footer {
-    margin-top: 10px;
-}
-
-.footer-para {
-    padding: 6px 0;
-}
+// Images
 
 .images { // used purely for sass loading
     background: url("img/logo.png");
