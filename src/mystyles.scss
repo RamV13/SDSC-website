@@ -151,7 +151,7 @@ a:hover {
     height: 50vh;
 }
 .home.multifaith {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover /* , url("img/multifaith.jpg") no-repeat center / cover */;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/multifaith.jpg") no-repeat center / cover;
     height: 50vh;
 }
 
@@ -209,6 +209,7 @@ form.join {
     background: url("img/books.jpg");
     background: url("img/summer.jpg");
     background: url("img/lectures.jpg");
+    background: url("img/soup.jpg");
     background: url("img/brunch.jpg");
     background: url("img/environment.jpg");
     background: url("img/childrens.jpg");
