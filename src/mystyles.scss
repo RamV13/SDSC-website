@@ -36,6 +36,7 @@ $box-shadow: 0 0 20px 5px #CCCCCC;
 @import "../node_modules/bulma/sass/components/card.sass";
 @import "../node_modules/bulma/sass/components/media.sass";
 @import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma-timeline/dist/css/bulma-timeline.sass";
 
 html, body {
     height: 100%;
@@ -174,6 +175,13 @@ p {
 
 // About
 .about.box {
+    box-shadow: 0 0 20px 5px #EEEEEE;
+}
+
+.timeline-content {
+    margin: 0 20px 0 20px;
+    padding: 16px 20px !important;
+    border-radius: 5px;
     box-shadow: 0 0 20px 5px #EEEEEE;
 }
 
