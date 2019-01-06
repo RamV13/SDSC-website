@@ -179,10 +179,11 @@ p {
 }
 
 .timeline-content {
-    margin: 0 20px 0 20px;
+    margin-left: 2em;
     padding: 16px 20px !important;
     border-radius: 5px;
     box-shadow: 0 0 20px 5px #EEEEEE;
+    width: calc(100% - 2em);
 }
 
 // Contact
