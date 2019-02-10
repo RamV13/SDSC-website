@@ -110,6 +110,7 @@ function updatePage(pageID) {
             }
             registerPageNavigators(pageMap[pageID]);
             prevRegisteredMap = pageMap[pageID];
+            window.scrollTo(0, 0);
         } else {
             $('#' + contentID).empty();
             $('#' + contentID).addClass(LOADING_CLASS);

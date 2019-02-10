@@ -5383,6 +5383,9 @@ p {
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
 
+.navbar-item-img {
+  vertical-align: middle; }
+
 #content {
   min-height: 90%; }
 
@@ -5477,6 +5480,10 @@ p {
   box-shadow: 0 0 20px 5px #EEEEEE;
   width: calc(100% - 2em); }
 
+.timeline-img {
+  display: block;
+  margin: 0 auto; }
+
 .contact.tile {
   margin-top: 20px; }
 
@@ -5516,4 +5523,15 @@ form.join {
   background: url(../img/soup.jpg);
   background: url(../img/brunch.jpg);
   background: url(../img/environment.jpg);
-  background: url(../img/childrens.jpg); }
+  background: url(../img/childrens.jpg);
+  background: url(../img/drawings_signed.png);
+  background: url(../img/land_aerial.png);
+  background: url(../img/beginconstr.png);
+  background: url(../img/phase1_structure.png);
+  background: url(../img/phase1_completed.png);
+  background: url(../img/begin_yoga.png);
+  background: url(../img/begin_health.png);
+  background: url(../img/begin_brunchbites.png);
+  background: url(../img/begin_tutoring.png);
+  background: url(../img/sdsc_logo_small.png);
+  background: url(../img/BabaWithSmile.png); }
