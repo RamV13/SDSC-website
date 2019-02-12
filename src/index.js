@@ -189,11 +189,15 @@ const QUOTE_TIME = 15; // (s)
 const QUOTES = [
     {quote: 'Love All, Serve All', isSai: true},
     {quote: 'Help Ever, Hurt Never', isSai: true},
-    {quote: 'Hands that serve are holier than lips that pray', isSai: false},
     {quote: 'There is only one religion, the religion of love', isSai: true},
     {quote: 'There is only one caste, the caste of humanity', isSai: true},
     {quote: 'There is only one language, the language of the heart', isSai: true},
-    {quote: 'Service to man is service to God', isSai: false}
+    {quote: 'Do not pollute your service with the poison of pride', isSai: true},
+    {quote: 'Feel that you are serving yourself, curbing the ego', isSai: true},
+    {quote: 'Engage in humble service and egoism will fade away', isSai: true},
+    {quote: 'Serve because you are urged by Love not by reward', isSai: true}
+    // {quote: 'Hands that serve are holier than lips that pray', isSai: false},
+    // {quote: 'Service to man is service to God', isSai: false},
 ];
 var quotes = QUOTES.slice(1, 5);
 
