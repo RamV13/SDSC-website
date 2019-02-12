@@ -5432,6 +5432,12 @@ p {
 .footer-para {
   padding: 6px 0; }
 
+.baba {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); }
+
 .home.box {
   padding: 0; }
 
