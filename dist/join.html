@@ -142,11 +142,18 @@
           <br>
         </p>
 
+        <label class="checkbox">
+          <input id="email-consent" type="checkbox">
+          I understand that I will receive email updates from SDSC.
+        </label>
+        <br>
+        <br>
+
         <div align="center">
           <div class="g-recaptcha"  data-callback="recaptchaCallback" data-sitekey="6LcfYAkUAAAAANuWmO6NnonEUJ6EaUajBMX2mgAP"></div>
           <div><label id="recaptchaErrorMessage" style="display:none;color:red;">Please click the checkbox</label></div>
           <br>
-          <input id="submitBtn" class="button is-primary" type="button" tabindex="13" name="action" value="Submit" onclick="submitRegistrationForm()">
+          <input id="submitBtn" class="button is-primary" type="button" tabindex="13" name="action" value="Submit" onclick="submitRegistrationForm()" disabled>
         </div>
       </form>
     </div>
@@ -154,6 +161,13 @@
 </div>
 
 <script type="text/javascript">
+$('#email-consent').click(function() {
+  if ($(this).is(':checked')) {
+    $('#submitBtn').prop('disabled', false);
+  } else {
+    $('#submitBtn').prop('disabled', true);
+  }
+});
 
 var isRecaptchaChecked = false;
 function submitRegistrationForm(){
