@@ -15,10 +15,10 @@ $('.navbar-item').click(function () {
 
 // Page Navigation Management
 
-const homeID = 'home';
-const contentID = 'content';
-const LOADING_CLASS = 'is-loading';
-const LOADING_INTERVAL = 50; // (ms)
+var homeID = 'home';
+var contentID = 'content';
+var LOADING_CLASS = 'is-loading';
+var LOADING_INTERVAL = 50; // (ms)
 var pageFilled = false;
 // tree of mappings between navigation buttons and page HTML
 var RESERVED_KEYS = ['html', 'fetching', 'toc'];
@@ -183,10 +183,10 @@ function createTOC() {
 
 // Quote Bank Management
 
-const quoteID = 'quote';
-const quoteSubtitleID = 'quote-subtitle';
-const QUOTE_TIME = 15; // (s)
-const QUOTES = [
+var quoteID = 'quote';
+var quoteSubtitleID = 'quote-subtitle';
+var QUOTE_TIME = 15; // (s)
+var QUOTES = [
     {quote: 'Love All, Serve All', isSai: true},
     {quote: 'Help Ever, Hurt Never', isSai: true},
     {quote: 'There is only one religion, the religion of love', isSai: true},
