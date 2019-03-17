@@ -3,3 +3,5 @@ node_modules/
 
 # IntelliJ Files
 .idea/
+
+.DS_Store
