@@ -9,7 +9,8 @@ require('./about.html');
 require('./events.html');
 require('./contact.html');
 require('./join.html');
-require('./mystyles.scss');
+require('./css/style.scss');
+require('./css/style.css');
 
 var $ = require('jquery');
 

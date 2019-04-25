@@ -17,26 +17,26 @@ $input-shadow: none;
 $box-shadow: 0 0 20px 5px #CCCCCC;
 
 // Import only what you need from Bulma
-@import "../node_modules/bulma/sass/utilities/_all.sass";
-@import "../node_modules/bulma/sass/base/_all.sass";
-@import "../node_modules/bulma/sass/components/level.sass";
-@import "../node_modules/bulma/sass/elements/box.sass";
-@import "../node_modules/bulma/sass/elements/button.sass";
-@import "../node_modules/bulma/sass/elements/container.sass";
-@import "../node_modules/bulma/sass/elements/content.sass";
-@import "../node_modules/bulma/sass/elements/form.sass";
-@import "../node_modules/bulma/sass/elements/icon.sass";
-@import "../node_modules/bulma/sass/elements/image.sass";
-@import "../node_modules/bulma/sass/elements/table.sass";
-@import "../node_modules/bulma/sass/elements/title.sass";
-@import "../node_modules/bulma/sass/grid/columns.sass";
-@import "../node_modules/bulma/sass/grid/tiles.sass";
-@import "../node_modules/bulma/sass/layout/hero.sass";
-@import "../node_modules/bulma/sass/layout/section.sass";
-@import "../node_modules/bulma/sass/components/card.sass";
-@import "../node_modules/bulma/sass/components/media.sass";
-@import "../node_modules/bulma/sass/components/navbar.sass";
-@import "../node_modules/bulma-timeline/dist/css/bulma-timeline.sass";
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../node_modules/bulma/sass/base/_all.sass";
+@import "../../node_modules/bulma/sass/components/level.sass";
+@import "../../node_modules/bulma/sass/elements/box.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
+@import "../../node_modules/bulma/sass/elements/container.sass";
+@import "../../node_modules/bulma/sass/elements/content.sass";
+@import "../../node_modules/bulma/sass/elements/form.sass";
+@import "../../node_modules/bulma/sass/elements/icon.sass";
+@import "../../node_modules/bulma/sass/elements/image.sass";
+@import "../../node_modules/bulma/sass/elements/table.sass";
+@import "../../node_modules/bulma/sass/elements/title.sass";
+@import "../../node_modules/bulma/sass/grid/columns.sass";
+@import "../../node_modules/bulma/sass/grid/tiles.sass";
+@import "../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../node_modules/bulma/sass/layout/section.sass";
+@import "../../node_modules/bulma/sass/components/card.sass";
+@import "../../node_modules/bulma/sass/components/media.sass";
+@import "../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../node_modules/bulma-timeline/dist/css/bulma-timeline.sass";
 
 html, body {
     height: 100%;
@@ -174,19 +174,19 @@ p {
     text-align: center;
 }
 .home.education {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/education.jpg") no-repeat center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("../img/education.jpg") no-repeat center / cover;
     height: 50vh;
 }
 .home.health {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/health.jpg") no-repeat center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("../img/health.jpg") no-repeat center / cover;
     height: 50vh;
 }
 .home.community {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/community.jpg") no-repeat center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("../img/community.jpg") no-repeat center / cover;
     height: 50vh;
 }
 .home.multifaith {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("img/multifaith.jpg") no-repeat center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) 0% 0% / cover, url("../img/multifaith.jpg") no-repeat center / cover;
     height: 50vh;
 }
 
@@ -242,28 +242,28 @@ form.join {
 // Images
 
 .images { // used purely for sass loading
-    background: url("img/logo.png");
-    background: url("img/nutrition.jpg");
-    background: url("img/venmo.png");
-    background: url("img/yoga.jpg");
-    background: url("img/facilities.jpg");
-    background: url("img/tutoring.jpg");
-    background: url("img/books.jpg");
-    background: url("img/summer.jpg");
-    background: url("img/lectures.jpg");
-    background: url("img/soup.jpg");
-    background: url("img/brunch.jpg");
-    background: url("img/environment.jpg");
-    background: url("img/childrens.jpg");
-    background: url("img/drawings_signed.png");
-    background: url("img/land_aerial.png");
-    background: url("img/beginconstr.png");
-    background: url("img/phase1_structure.png");
-    background: url("img/phase1_completed.png");
-    background: url("img/begin_yoga.png");
-    background: url("img/begin_health.png");
-    background: url("img/begin_brunchbites.png");
-    background: url("img/begin_tutoring.png");
-    background: url("img/sdsc_logo_small.png");
-    background: url("img/baba.png");
+    background: url("../img/logo.png");
+    background: url("../img/nutrition.jpg");
+    background: url("../img/venmo.png");
+    background: url("../img/yoga.jpg");
+    background: url("../img/facilities.jpg");
+    background: url("../img/tutoring.jpg");
+    background: url("../img/books.jpg");
+    background: url("../img/summer.jpg");
+    background: url("../img/lectures.jpg");
+    background: url("../img/soup.jpg");
+    background: url("../img/brunch.jpg");
+    background: url("../img/environment.jpg");
+    background: url("../img/childrens.jpg");
+    background: url("../img/drawings_signed.png");
+    background: url("../img/land_aerial.png");
+    background: url("../img/beginconstr.png");
+    background: url("../img/phase1_structure.png");
+    background: url("../img/phase1_completed.png");
+    background: url("../img/begin_yoga.png");
+    background: url("../img/begin_health.png");
+    background: url("../img/begin_brunchbites.png");
+    background: url("../img/begin_tutoring.png");
+    background: url("../img/sdsc_logo_small.png");
+    background: url("../img/baba.png");
 }
