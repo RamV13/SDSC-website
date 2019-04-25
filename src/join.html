@@ -1,0 +1,292 @@
+<div class="section">
+  <!-- <iframe id="blockrandom" name="iframe" src="http://www.saiservice.org/www/register.php" width="100%" height="1000" scrolling="auto" frameborder="0" class="wrapper">
+    This option will not work correctly. Unfortunately, your browser does not support inline frames.</iframe> -->
+  <div class="card">
+    <div class="card-content">
+      <form id="form2" class="join" action="register.php" method="post" novalidate="novalidate">
+        <p><input type="hidden" name="sql" value="insert"></p>
+        <br>
+        <table class="tbl" border="0" cellspacing="1" cellpadding="5">
+          <colgroup>
+            <col span="1" width="35%">
+            <col span="1" width="65%">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="dr">
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" placeholder="Email" tabindex="1" id="primaryEmail" name="primaryEmail" title="Please enter a valid email address" required="" aria-required="true">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="dr">
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" placeholder="Confirm Email" tabindex="1" id="emailConfirmation" name="emailConfirmation" title="Please enter a valid email address" required="" aria-required="true">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="dr">
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" placeholder="First Name" tabindex="2" id="firstName" name="firstName" title="First Name is required!" maxlength="30" value="" required="" aria-required="true">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr style="display: none">
+              <td class="dr">
+                <input class="input" type="text" tabindex="3" name="middleName" maxlength="30" value="">
+              </td>
+            </tr>
+            <tr>
+              <td class="dr">
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" placeholder="Last Name" tabindex="4" id="lastName" name="lastName" title="Last Name is required!" maxlength="30" value="" required="" aria-required="true">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr style="display: none">
+              <td class="dr">
+                <input class="input" title="Street is required!" tabindex="5" type="text" name="street" value="N/A" required="" aria-required="true">
+              </td>
+            </tr>
+            <tr style="display: none">
+              <td class="dr">
+                <input class="input" title="City is required!" tabindex="6" type="text" name="city" value="N/A" required="" aria-required="true">
+              </td>
+            </tr>
+            <tr>
+              <td class="dr">
+                <input id="stateInputFreeText" class="input" style="display:none" type="text" title="State is required!" tabindex="7" name="state" value="N/A" required="" aria-required="true">
+                <div class="select">
+                  <select id="stateInputDropDown" data-country="US" data-state="NJ" data-blank="false" name="state" tabindex="7"><option value="" disabled selected>State</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AS">American Samoa</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="AF">Armed Forces Africa</option><option value="AA">Armed Forces Americas</option><option value="AC">Armed Forces Canada</option><option value="AE">Armed Forces Europe</option><option value="AM">Armed Forces Middle East</option><option value="AP">Armed Forces Pacific</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FM">Federated States Of Micronesia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="GU">Guam</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MH">Marshall Islands</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="MP">Northern Mariana Islands</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PW">Palau</option><option value="PA">Pennsylvania</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VI">Virgin Islands</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option></select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="dr">
+                <div class="select">
+                  <select id="country" name="country" class="input-medium bfh-countries input" data-country="US" data-blank="false" tabindex="8"><option value="" disabled selected>Country</option><option value="AF">Afghanistan</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="CI">Côte d'Ivoire</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="CD">Democratic Republic of the Congo</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="TP">East Timor</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FO">Faeroe Islands</option><option value="FK">Falkland Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="MK">Former Yugoslav Republic of Macedonia</option><option value="FR">France</option><option value="FX">France, Metropolitan</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard and Mc Donald Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macau</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="KP">North Korea</option><option value="MP">Northern Marianas</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestine</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn Islands</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="ST">São Tomé and Príncipe</option><option value="SH">Saint Helena</option><option value="PM">St. Pierre and Miquelon</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia and the South Sandwich Islands</option><option value="KR">South Korea</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen Islands</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="BS">The Bahamas</option><option value="GM">The Gambia</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="VI">US Virgin Islands</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UM">United States Minor Outlying Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican City</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis and Futuna Islands</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="dr">
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input" placeholder="Zip Code" title="Zip is required!" type="number" tabindex="9" name="zip" value="" required="" aria-required="true">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-map-marker"></i>
+                    </span>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="dr">
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input" placeholder="Phone Number" title="Please enter a valid phone number" type="number" tabindex="10" name="phone1" maxlength="25" value="" required="" aria-required="true">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-phone"></i>
+                    </span>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr style="display: none">
+              <td class="hr">Other Emails</td>
+              <td class="dr">
+                <textarea class="input" tabindex="11" cols="20" rows="3" name="otherEmails" id="otherEmails" placeholder="Separate each email by a comma"></textarea>
+              </td>
+            </tr>
+            <tr style="display: none">
+              <td class="hr">Secondary phone numbe</td>
+              <td class="dr">
+                <input class="input" type="text" id="phone2" name="phone2" maxlength="25" tabindex="12" value="">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <p class="content">
+          <b>Note: All fields must be completed.</b>
+          <br><br>
+          <b>Please read and agree to the following before clicking on Submit:</b>
+          <br>
+          I understand the purpose of this organization and agree to abide by and to conduct myself in
+          accordance with Bhagavan Sri Sathya Sai Baba's guidelines regarding selfless service.
+          I support the mission of Sarva Dharma Service Center Inc. and pledge to work in harmony with
+          the decisions taken by the Coordinating Committee. I understand that there is no membership fee
+          or any other financial obligation on my part.
+          <br>
+        </p>
+
+        <label class="checkbox">
+          <input id="email-consent" type="checkbox" style="cursor: pointer">
+          I understand that I will receive email updates from SDSC.
+        </label>
+        <br>
+        <br>
+
+        <div align="center">
+          <div class="g-recaptcha"  data-callback="recaptchaCallback" data-sitekey="6LcfYAkUAAAAANuWmO6NnonEUJ6EaUajBMX2mgAP"></div>
+          <div><label id="recaptchaErrorMessage" style="display:none;color:red;">Please click the checkbox</label></div>
+          <br>
+          <input id="submitBtn" class="button is-primary" type="button" tabindex="13" name="action" value="Submit" style="cursor: pointer" onclick="submitRegistrationForm()" disabled>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$('#email-consent').click(function() {
+  if ($(this).is(':checked')) {
+    $('#submitBtn').prop('disabled', false);
+  } else {
+    $('#submitBtn').prop('disabled', true);
+  }
+});
+
+var isRecaptchaChecked = false;
+function submitRegistrationForm(){
+  if(!isRecaptchaChecked){
+    $("#recaptchaErrorMessage").show();
+  }
+  $( "#form2" ).validate();
+  if($( "#form2" ).valid()){
+    if(isRecaptchaChecked){
+      $( "#form2" ).submit();
+    }
+  }
+}
+//This function is called after the user clicks on the checkbox.
+function recaptchaCallback() {
+    isRecaptchaChecked = true;
+  $("#recaptchaErrorMessage").hide();
+};
+$().ready(function() {
+  initJqueryValidator();
+  initCountryStateBinding();
+  
+});
+function initCountryStateBinding(){
+  $("#country").change(function(){
+    if($("#country").val() == "US"){
+      $("#stateInputDropDown").prop('disabled', false).show();
+      $("#stateInputFreeText").prop('disabled', true).hide();
+    }else{
+      $("#stateInputFreeText").prop('disabled', false).show();
+      $("#stateInputDropDown").prop('disabled', true).hide();
+    }
+  });
+}
+$.validator.addMethod("customEmail", 
+    function(value, element) {
+        return checkEmailFormat(value);
+    }, 
+    "Please enter a valid email address of the form x@y.com"
+);
+function checkEmailFormat(email){
+  return /^([a-zA-Z0-9._])+\@(([a-zA-Z0-9])+)\.+([a-zA-Z0-9]{2,4})$/.test(email);
+}
+
+$.validator.addMethod("otherEmailsValidator", 
+    function(value, element) {
+      if($("#otherEmails").val().length==0){
+        return true;
+      }
+      var listOfOtherEmails = $("#otherEmails").val().split(',');
+      if(listOfOtherEmails.length==0 || $.trim(listOfOtherEmails[0])==''){
+        return true;
+      }
+      var validity = true;
+      listOfOtherEmails.forEach(function(email){
+         validity = checkEmailFormat(email);
+         if(!validity){
+          return false;
+         }
+         
+      });
+      if(!validity){
+        return false;
+       }
+      return true;
+    }, 
+    "Please enter a valid email address of the form x@y.com"
+);
+
+$.validator.addMethod("customPhone", 
+    function(value, element) {
+    if(element.id=="phone2"){
+      if($("#phone2").val().length==0){
+        return true;
+      }
+    }
+        return /^\s*\(?\s*\+?\s*(\(?\s*\d+\s*\)?\s*){10,}$/.test(value);
+    }, 
+    "Please enter a valid phone number"
+);
+$.validator.addMethod("emailConfirmationValidator",
+  function(value, element) {
+    return $("#emailConfirmation").val()==$("#primaryEmail").val();
+  },
+  "The email entered does not match the Primary email address"
+);
+function initJqueryValidator(){
+  $( "#form2" ).validate({
+    rules: {
+    primaryEmail: {
+      required: true,
+      customEmail: true
+    },
+    phone1: {
+      required:true,
+      customPhone: true
+    },
+    phone2: {
+      customPhone: true,
+      required: function(element){
+        return $("#phone2").val().length>0;
+      }
+    },
+    otherEmails:{
+      otherEmailsValidator: true,
+      required: function(element){
+        return $("#otherEmails").val().length>0;
+      }
+    },
+    emailConfirmation:{
+      emailConfirmationValidator: true,
+      required: true
+    }
+    }
+  });
+  
+  $(".cancel").click(function() {
+    validator.resetForm();
+  });
+}
+</script>
+<script src='https://www.google.com/recaptcha/api.js'></script>

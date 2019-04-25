@@ -1,4 +1,16 @@
+// requires for webpack loading
+require('./index.html');
+require('./home.html');
+require('./education.html');
+require('./health.html');
+require('./community.html');
+require('./multifaith.html');
+require('./about.html');
+require('./events.html');
+require('./contact.html');
+require('./join.html');
 require('./mystyles.scss');
+
 var $ = require('jquery');
 
 // Navbar Management

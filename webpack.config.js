@@ -9,6 +9,20 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /\.html$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: './',
+            publicPath: './',
+            useRelativePaths: true
+          }
+        }
+      ]
+    },
+    {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
