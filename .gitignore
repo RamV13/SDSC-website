@@ -4,4 +4,7 @@ node_modules/
 # IntelliJ Files
 .idea/
 
+# Dist
+dist/
+
 .DS_Store
