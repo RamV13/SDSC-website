@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RamV13/SDSC-website.git"
+    "url": "git+https://github.com/saiservice/website.git"
   },
   "bugs": {
-    "url": "https://github.com/RamV13/SDSC-website/issues"
+    "url": "https://github.com/saiservice/website/issues"
   },
   "devDependencies": {
     "bulma": "^0.7.1",
