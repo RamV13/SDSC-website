@@ -209,7 +209,7 @@ $.validator.addMethod("customEmail",
     "Please enter a valid email address of the form x@y.com"
 );
 function checkEmailFormat(email){
-  return /^([a-zA-Z0-9._])+\@(([a-zA-Z0-9])+)\.+([a-zA-Z0-9]{2,4})$/.test(email);
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 }
 
 $.validator.addMethod("otherEmailsValidator", 
