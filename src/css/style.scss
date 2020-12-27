@@ -151,6 +151,12 @@ p {
 }
 
 // Home
+.home.building {
+    height: 40vh;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    background: url("../img/building.jpg") no-repeat center / cover;
+}
 .home.box {
     padding: 0;
 }
@@ -267,4 +273,5 @@ form.join {
     background: url("../img/begin_tutoring.png");
     background: url("../img/sdsc_logo_small.png");
     background: url("../img/baba.png");
+    background: url("../img/building.jpg");
 }
