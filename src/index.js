@@ -10,7 +10,6 @@ require('./events.html');
 require('./contact.html');
 require('./join.html');
 require('./css/style.scss');
-require('./css/style.css');
 
 var $ = require('jquery');
 
