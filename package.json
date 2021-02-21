@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RamV13/SDSC-website.git"
+    "url": "git+https://github.com/saiservice/website.git"
   },
   "bugs": {
-    "url": "https://github.com/RamV13/SDSC-website/issues"
+    "url": "https://github.com/saiservice/website/issues"
   },
   "devDependencies": {
     "bulma": "^0.7.1",
@@ -22,7 +22,7 @@
     "http-server": "^0.11.1",
     "jquery": "^3.3.1",
     "mini-css-extract-plugin": "^0.6.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.17.2",

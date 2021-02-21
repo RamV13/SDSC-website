@@ -151,6 +151,12 @@ p {
 }
 
 // Home
+.home.building {
+    height: 40vh;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    background: url("../img/building.jpg") no-repeat center / cover;
+}
 .home.box {
     padding: 0;
 }
@@ -267,6 +273,12 @@ form.join {
     background: url("../img/begin_tutoring.png");
     background: url("../img/sdsc_logo_small.png");
     background: url("../img/baba.png");
+    background: url("../img/building.jpg");
+    background: url("../img/health_lakewood.jpg");
+    background: url("../img/yoga2.jpg");
+    background: url("../img/annual_multifaith.jpg");
+    background: url("../img/weekly_devotional.jpg");
+    background: url("../img/special_talk.jpg");
     background: url("../img/covid19_food_assistance.png");
     background: url("../img/grocery_delivery.png");
 }
