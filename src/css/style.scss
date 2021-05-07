@@ -151,6 +151,38 @@ p {
 }
 
 // Home
+.tile {
+    // The following adjustment is needed due to a discrepancy between how
+    // Chrome and Safari calculate flex box heights.
+    flex-basis: auto;
+}
+.home.carousel-container {
+  position: relative;
+  height: 50vh;
+  margin-bottom: 2rem;
+}
+.home.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.home.carousel0 {
+    background-image: url("../img/multifaith.jpg");
+}
+.home.carousel1 {
+    background-image: url("../img/brunch.jpg");
+    display: none;
+}
+.home.carousel2 {
+    background-image: url("../img/education.jpg");
+    display: none;
+}
 .home.building {
     height: 40vh;
     margin-bottom: 2rem;
