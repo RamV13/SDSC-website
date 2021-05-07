@@ -151,6 +151,11 @@ p {
 }
 
 // Home
+.tile {
+    // The following adjustment is needed due to a discrepancy between how
+    // Chrome and Safari calculate flex box heights.
+    flex-basis: auto;
+}
 .home.building {
     height: 40vh;
     margin-bottom: 2rem;
