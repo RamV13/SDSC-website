@@ -236,3 +236,23 @@ function shuffleQuote() {
 $(function () {
     setTimeout(shuffleQuote, QUOTE_TIME * 1000);
 });
+
+// Carousel Management
+
+var carouselID = 'carousel';
+var carouselIndex = 0;
+var CAROUSEL_TIME = 5; // (s)
+
+// Rotate the image being shown.
+function rotateImage() {
+    $('#' + carouselID + carouselIndex).fadeOut('slow', function () {
+        carouselIndex++;
+        carouselIndex = carouselIndex % $('#' + carouselID + ' div').length;
+        $('#' + carouselID + carouselIndex).fadeIn('slow', function () {
+          setTimeout(rotateImage, CAROUSEL_TIME * 1000);
+        });
+    });
+}
+$(function () {
+    setTimeout(rotateImage, CAROUSEL_TIME * 1000);
+});
