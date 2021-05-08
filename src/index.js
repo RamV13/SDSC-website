@@ -15,6 +15,10 @@ var $ = require('jquery');
 
 // Navbar Management
 
+$(function() {
+    $('#sdsc-title').click(function() { navigatePage('home'); });
+});
+
 $('.burger').click(function () {
     $('.burger').toggleClass('is-active');
     $('#' + this.dataset.target).toggleClass('is-active');
