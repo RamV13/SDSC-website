@@ -131,8 +131,17 @@ function updatePage(pageID) {
                 updatePage(pageID);
             }, LOADING_INTERVAL);
         }
-        $('#' + contentID).fadeIn();
+        $('#' + contentID).fadeIn(function() {
+          if (pageMap[pageID].html) pageLoaded(pageID);
+        });
     });
+}
+
+function navigatePage(pageID) {
+  updatePage(pageID);
+  window.history.pushState({
+      pageID: pageID
+  }, '', '#' + pageID);
 }
 
 // unbinds all events from the pages in the provided page map
@@ -157,12 +166,7 @@ function registerPageNavigators(pageMap) {
 
         // register click callbacks that render corresponding page HTML
         $('#' + pageID).click(function () {
-            if (pageID != currentPage()) {
-                updatePage(pageID);
-                window.history.pushState({
-                    pageID: pageID
-                }, '', '#' + pageID);
-            }
+            if (pageID != currentPage()) navigatePage(pageID);
             return false;
         });
     });
@@ -177,6 +181,16 @@ window.onpopstate = function (e) {
 $(function () {
     registerPageNavigators(navMap);
 });
+
+// Callback for when a page is loaded.
+function pageLoaded(pageID) {
+  if (pageID == 'home') {
+    // Add click handler for redirecting to contacts.
+    refreshCarouselContactRedirect();
+    // Kick off image rotation.
+    setTimeout(rotateImage, CAROUSEL_TIME * 1000);
+  }
+}
 
 // Page Management
 
@@ -243,8 +257,15 @@ var carouselID = 'carousel';
 var carouselIndex = 0;
 var CAROUSEL_TIME = 5; // (s)
 
+// Binds a callback to navigate to the contact page upon clicking the carousel.
+function refreshCarouselContactRedirect() {
+  $('#' + carouselID).off('click');
+  $('#' + carouselID).click(function() { navigatePage('contact'); });
+}
+
 // Rotate the image being shown.
 function rotateImage() {
+    if (currentPage() != 'home') return;
     $('#' + carouselID + carouselIndex).fadeOut('slow', function () {
         carouselIndex++;
         carouselIndex = carouselIndex % $('#' + carouselID + ' div').length;
@@ -253,6 +274,3 @@ function rotateImage() {
         });
     });
 }
-$(function () {
-    setTimeout(rotateImage, CAROUSEL_TIME * 1000);
-});
