@@ -270,9 +270,11 @@ function refreshCarouselContactRedirect() {
 // Rotate the image being shown.
 function rotateImage() {
     if (currentPage() != 'home') return;
+    $('#' + carouselID).fadeTo('fast', 0);
     $('#' + carouselID + carouselIndex).fadeOut('slow', function () {
         carouselIndex++;
         carouselIndex = carouselIndex % $('#' + carouselID + ' div').length;
+        $('#' + carouselID).fadeTo('fast', 1);
         $('#' + carouselID + carouselIndex).fadeIn('slow', function () {
           setTimeout(rotateImage, CAROUSEL_TIME * 1000);
         });

@@ -157,9 +157,26 @@ p {
     flex-basis: auto;
 }
 .home.carousel-container {
-  position: relative;
-  height: 50vh;
-  margin-bottom: 2rem;
+    position: relative;
+    height: 50vh;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50vh;
+    font-size: 2rem;
+    font-weight: 600;
+    color: transparent;
+    z-index: 0;
+    background-color: transparent;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    transform-style: preserve-3d;
+}
+.home.carousel-container:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 .home.carousel {
     position: absolute;
@@ -171,6 +188,8 @@ p {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    z-index: -1;
+    transform: translateZ(-1px);
 }
 .home.carousel0 {
     background-image: url("../img/multifaith.jpg");
