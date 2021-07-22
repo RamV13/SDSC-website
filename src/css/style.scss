@@ -159,7 +159,7 @@ p {
 .home.carousel-container {
   position: relative;
   height: 50vh;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .home.carousel {
     position: absolute;
@@ -173,14 +173,14 @@ p {
     background-size: cover;
 }
 .home.carousel0 {
-    background-image: url("../img/multifaith.jpg");
+    background-image: url("../img/covid_relief_1.png");
 }
 .home.carousel1 {
-    background-image: url("../img/brunch.jpg");
+    background-image: url("../img/covid_relief_2.png");
     display: none;
 }
 .home.carousel2 {
-    background-image: url("../img/education.jpg");
+    background-image: url("../img/covid_relief_3.png");
     display: none;
 }
 .home.building {
@@ -264,7 +264,9 @@ hr.contact {
 .venmo {
     height: 28px;
 }
-
+.donateoptions {
+    margin: 20px 0;
+}
 // Join
 form.join {
     max-width: 650px;
@@ -285,6 +287,7 @@ form.join {
     background: url("../img/logo.png");
     background: url("../img/nutrition.jpg");
     background: url("../img/venmo.png");
+    background: url("../img/zelle.png");
     background: url("../img/yoga.jpg");
     background: url("../img/facilities.jpg");
     background: url("../img/tutoring.jpg");
@@ -312,6 +315,4 @@ form.join {
     background: url("../img/annual_multifaith.jpg");
     background: url("../img/weekly_devotional.jpg");
     background: url("../img/special_talk.jpg");
-    background: url("../img/covid19_food_assistance.png");
-    background: url("../img/grocery_delivery.png");
 }
