@@ -9,7 +9,7 @@ require('./about.html');
 require('./events.html');
 require('./contact.html');
 require('./join.html');
-require('./charm2024.index.html');
+require('./charm2024/charm2024.html');
 require('./css/style.scss');
 
 var $ = require('jquery');
@@ -54,7 +54,7 @@ var navMap = {
     events: {},
     contact: {},
     join: {},
-    charm: {}
+    charm2024: {}
 };
 
 // initialize page HTML once the page is rendered
