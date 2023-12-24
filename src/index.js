@@ -9,7 +9,6 @@ require('./about.html');
 require('./events.html');
 require('./contact.html');
 require('./join.html');
-require('./charm2024/charm2024.html');
 require('./css/style.scss');
 
 var $ = require('jquery');
@@ -54,7 +53,9 @@ var navMap = {
     events: {},
     contact: {},
     join: {},
-    charm2024: {}
+    charm2024: {
+      url: "/charm2024/index.html"
+    }
 };
 
 // initialize page HTML once the page is rendered
@@ -105,6 +106,11 @@ var prevRegisteredMap;
 function updatePage(pageID) {
     var pageMap = findPageMap(navMap, pageID);
     if (!pageMap) return;
+
+    if (pageMap[pageID].url) {
+      window.location.href = pageMap[pageID].url;
+      return;
+    }
 
     if ($('#' + contentID).hasClass(LOADING_CLASS) && !pageMap[pageID].html) {
         fetchHTML(pageMap, pageID);
