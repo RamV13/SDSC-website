@@ -5,8 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "serve": "http-server dist/",
-    "watch": "webpack --watch",
-    "build": "webpack -p"
+    "watch": "webpack watch",
+    "build": "webpack build"
   },
   "repository": {
     "type": "git",
